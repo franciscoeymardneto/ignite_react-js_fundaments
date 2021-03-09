@@ -1,10 +1,4 @@
+import { render } from "react-dom";
+import App from "./App";
 
-import React from 'react';
-
-// import { Container } from './styles';
-
-function App() {
-  return <div />;
-}
-
-export default App;
+render(<App/>,document.getElementById('root'))

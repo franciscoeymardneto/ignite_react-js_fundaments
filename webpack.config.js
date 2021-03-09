@@ -1,8 +1,9 @@
-const path = require("path") //trabalhar com caminhos node 
+const path = require("path") //work with node paths
 module.exports = {
+  mode: 'development',
   entry: path.resolve(__dirname,"src","index.jsx"),
   output: {
-    path: path.resolve(__dirname,"public"),
+    path: path.resolve(__dirname,"dist"),
     filename: "bundle.js"
   },
 
