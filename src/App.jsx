@@ -1,5 +1,5 @@
-import React from 'react';
-
+import React from 'react'
+import "../styles/global.css"
 // import { Container } from './styles';
 
 function App() {
