@@ -1,7 +1,10 @@
 const path = require('path') //work with node paths
 const HtmlwebpackPlugin = require('html-webpack-plugin')
+
+const isDevelopment = process.env.NODE_ENV !== 'production'
+
 module.exports = {
-  mode: 'development',
+  mode: isDevelopment ? 'development' : 'production',
   entry: path.resolve(__dirname,'src','index.jsx'),
   output: {
     path: path.resolve(__dirname,'dist'),
@@ -16,6 +19,10 @@ module.exports = {
       template: path.resolve(__dirname,'public','index.html')
     })
   ],
+  devServer:{
+    contentBase: path.resolve(__dirname,'public')
+  },
+  devtool:  isDevelopment ? 'eval-source-map' : 'source-map',
   module: {
     /**
      * Rules for read js files
