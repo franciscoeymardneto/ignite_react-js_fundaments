@@ -39,9 +39,11 @@ module.exports = {
         exclude: /node_modules/, //Dont transpile node_modules .js files on babel
         use: {
           loader: 'babel-loader',
-          plugins: [
-            isDevelopment && require.resolve('react-refresh-babel')
-          ].filter(Boolean)
+          options: {
+            plugins: [
+              isDevelopment && require.resolve('react-refresh/babel')
+            ].filter(Boolean)
+          }
         }
       },
       {
