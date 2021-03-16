@@ -1,10 +1,12 @@
 import React from 'react'
 import "../styles/global.scss"
-// import { Container } from './styles';
+import RepositoryList from './components/RepositoryList'
 
 function App() {
 
-  return <h1>Olá mundo</h1>;
+  return (
+    <RepositoryList />
+  )
 }
 
-export default App;
+export default App
