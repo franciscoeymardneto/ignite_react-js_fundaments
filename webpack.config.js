@@ -6,14 +6,14 @@ const isDevelopment = process.env.NODE_ENV !== 'production'
 
 module.exports = {
   mode: isDevelopment ? 'development' : 'production',
-  entry: path.resolve(__dirname,'src','index.jsx'),
+  entry: path.resolve(__dirname,'src','index.tsx'),
   output: {
     path: path.resolve(__dirname,'dist'),
     filename: 'bundle.js'
   },
 
   resolve: {
-    extensions: ['.js', '.jsx']
+    extensions: ['.js', '.jsx', '.ts', '.tsx']
   },
   plugins: [
     new HtmlwebpackPlugin({
@@ -35,7 +35,7 @@ module.exports = {
 
     rules: [
       {
-        test: /\.jsx$/, // Execute only that .js extensions
+        test: /\.(j|t)sx$/, // Execute only that .js extensions
         exclude: /node_modules/, //Dont transpile node_modules .js files on babel
         use: {
           loader: 'babel-loader',
