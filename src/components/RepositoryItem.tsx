@@ -1,7 +1,12 @@
-import React from 'react'
+interface repositoryItem {
+  repository: {
+    name: string
+    html_url: string
+    description: string
+  }
+}
 
-
-function RepositoryItem(props) {
+function RepositoryItem(props : repositoryItem) {
   const { name, html_url, description } = props.repository
   return (
     <li>
